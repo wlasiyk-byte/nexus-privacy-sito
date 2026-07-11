@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus Privacy — Smart Home Privacy & AI Tools B2B</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --bg:#F5F5F7;
+    --surface:#FFFFFF;
+    --text:#1D1D1F;
+    --text-secondary:#6E6E73;
+    --accent:#0071E3;
+    --accent-hover:#0077ED;
+    --border:#D2D2D7;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .nav-blur{
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    background-color:rgba(245,245,247,0.8);
+  }
+  .btn-accent{background:var(--accent); transition:background-color .2s ease;}
+  .btn-accent:hover{background:var(--accent-hover);}
+  .btn-ghost{transition:opacity .2s ease;}
+  .btn-ghost:hover{opacity:.65;}
+  .card-hover{transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;}
+  .card-hover:hover{transform:translateY(-6px); box-shadow:0 24px 48px rgba(0,0,0,0.08);}
+  .fade-in{animation:fadeIn .7s ease both;}
+  .fade-in-delay-1{animation:fadeIn .7s ease .1s both;}
+  .fade-in-delay-2{animation:fadeIn .7s ease .2s both;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+  .star{color:#1D1D1F;}
+  .star-empty{color:#D2D2D7;}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-thumb{background:#D2D2D7; border-radius:10px;}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b" style="border-color:var(--border)">
+  <div class="max-w-6xl mx-auto px-6 h-12 flex items-center justify-between">
+    <a href="#" id="navLogo" class="text-[15px] font-semibold tracking-tight"></a>
+    <div class="hidden md:flex items-center gap-8 text-[13px]" style="color:var(--text-secondary)">
+      <a href="#hardware" class="hover:text-black transition-colors">Hardware</a>
+      <a href="#software" class="hover:text-black transition-colors">Software</a>
+      <a href="#blog" class="hover:text-black transition-colors">Blog</a>
+      <a href="#contatti" class="hover:text-black transition-colors">Contatti</a>
+    </div>
+    <a href="#software" class="text-[13px] font-medium" style="color:var(--accent)">Esplora tool →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="pt-44 pb-24 px-6 text-center">
+  <p class="fade-in text-[15px] font-semibold mb-4" style="color:var(--accent)">Privacy-first. Verificato. Senza fronzoli.</p>
+  <h1 id="heroPayoff" class="fade-in-delay-1 max-w-4xl mx-auto text-[42px] md:text-[64px] font-semibold leading-[1.05] tracking-tight mb-6"></h1>
+  <p class="fade-in-delay-2 max-w-2xl mx-auto text-[19px] md:text-[21px]" style="color:var(--text-secondary)">
+    Recensioni indipendenti su hardware smart home e strumenti software B2B/AI, scelti per chi non vuole scambiare comodità con i propri dati.
+  </p>
+  <div class="fade-in-delay-2 mt-10 flex items-center justify-center gap-4">
+    <a href="#hardware" class="btn-accent text-white text-[15px] font-medium px-7 py-3 rounded-full">Scopri l'hardware</a>
+    <a href="#software" class="btn-ghost text-[15px] font-medium px-7 py-3 rounded-full border" style="border-color:var(--border); color:var(--text)">Scopri i software →</a>
+  </div>
+</header>
+
+<!-- HARDWARE BENTO -->
+<section id="hardware" class="max-w-6xl mx-auto px-6 pb-28">
+  <div class="flex items-end justify-between mb-10">
+    <div>
+      <p class="text-[13px] font-semibold uppercase tracking-wide mb-2" style="color:var(--accent)">Smart Home & Privacy</p>
+      <h2 class="text-[32px] md:text-[40px] font-semibold tracking-tight">Hardware selezionato</h2>
+    </div>
+    <p class="hidden md:block text-[15px] max-w-xs text-right" style="color:var(--text-secondary)">Dispositivi testati per proteggere la rete domestica senza dipendere dal cloud.</p>
+  </div>
+  <div id="hardwareGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+</section>
+
+<!-- SOFTWARE BENTO -->
+<section id="software" class="px-6 pb-28" style="background:var(--surface)">
+  <div class="max-w-6xl mx-auto py-24">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <p class="text-[13px] font-semibold uppercase tracking-wide mb-2" style="color:var(--accent)">Software B2B & AI</p>
+        <h2 class="text-[32px] md:text-[40px] font-semibold tracking-tight">Strumenti per team che scalano</h2>
+      </div>
+      <p class="hidden md:block text-[15px] max-w-xs text-right" style="color:var(--text-secondary)">Automazione e AI che rispettano compliance e dati aziendali.</p>
+    </div>
+    <div id="softwareGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section id="blog" class="max-w-6xl mx-auto px-6 pb-28 pt-4">
+  <div class="flex items-end justify-between mb-10">
+    <h2 class="text-[32px] md:text-[40px] font-semibold tracking-tight">Dal blog</h2>
+    <a href="#" class="text-[15px] font-medium" style="color:var(--accent)">Vedi tutti →</a>
+  </div>
+  <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="px-6 pb-28">
+  <div class="max-w-5xl mx-auto rounded-[32px] text-center py-20 px-6" style="background:#1D1D1F;">
+    <h2 class="text-white text-[32px] md:text-[44px] font-semibold tracking-tight mb-4">Non sai da dove iniziare?</h2>
+    <p class="text-[17px] mb-8 max-w-xl mx-auto" style="color:#A1A1A6">Scrivici il tuo caso d'uso: hardware domestico o stack software aziendale. Ti indichiamo la soluzione più adatta.</p>
+    <a href="#contatti" class="btn-accent text-white text-[15px] font-medium px-8 py-3 rounded-full inline-block">Scrivici ora</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contatti" class="border-t py-10 px-6" style="border-color:var(--border)">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-[13px]" style="color:var(--text-secondary)">
+    <p id="footerText"></p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-black transition-colors">Privacy</a>
+      <a href="#" class="hover:text-black transition-colors">Termini</a>
+      <a href="#" id="footerEmail" class="hover:text-black transition-colors"></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+let siteData = null;
+
+function formatData(iso){
+  const d = new Date(iso);
+  return d.toLocaleDateString('it-IT', { day:'numeric', month:'long', year:'numeric' });
+}
+
+function starRow(voto){
+  const full = Math.round(voto);
+  let html = '';
+  for(let i=0;i<5;i++){
+    html += `<span class="${i < full ? 'star' : 'star-empty'}">★</span>`;
+  }
+  return html;
+}
+
+function renderHardware(){
+  const grid = document.getElementById('hardwareGrid');
+  grid.innerHTML = '';
+  siteData.prodottiFisici.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card-hover bg-white rounded-[24px] p-7 flex gap-6 items-start border';
+    card.style.borderColor = 'var(--border)';
+    card.innerHTML = `
+      <img src="${p.immaginePlaceholder}" alt="${p.titolo}" class="w-28 h-28 rounded-[16px] object-cover flex-shrink-0">
+      <div class="flex-1 min-w-0">
+        <h3 class="text-[19px] font-semibold mb-1 tracking-tight" style="color:var(--text)">${p.titolo}</h3>
+        <div class="text-[13px] mb-2">${starRow(p.voto)} <span style="color:var(--text-secondary)">(${p.voto})</span></div>
+        <p class="text-[14px] mb-4" style="color:var(--text-secondary)">${p.descrizioneBreve}</p>
+        <div class="flex items-center justify-between">
+          <span class="text-[15px] font-semibold" style="color:var(--text)">${p.prezzoStimato}</span>
+          <a href="${p.linkAffiliato}" target="_blank" rel="noopener sponsored" class="btn-accent text-white text-[13px] font-medium px-4 py-2 rounded-full">Vedi offerta</a>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderSoftware(){
+  const grid = document.getElementById('softwareGrid');
+  grid.innerHTML = '';
+  siteData.softwareAI.forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'card-hover bg-[#F5F5F7] rounded-[24px] p-7 border';
+    card.style.borderColor = 'var(--border)';
+    const feats = s.caratteristicheChiave.map(f => `
+      <li class="flex items-start gap-2 text-[13px]" style="color:var(--text-secondary)">
+        <span style="color:var(--accent)">✓</span>${f}
+      </li>`).join('');
+    card.innerHTML = `
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-[19px] font-semibold tracking-tight" style="color:var(--text)">${s.titolo}</h3>
+        <span class="text-[11px] font-semibold px-3 py-1 rounded-full" style="background:rgba(0,113,227,0.1); color:var(--accent)">${s.tipoCommissione}</span>
+      </div>
+      <p class="text-[14px] mb-4" style="color:var(--text-secondary)">${s.descrizioneBreve}</p>
+      <ul class="space-y-2 mb-6">${feats}</ul>
+      <a href="${s.linkAffiliato}" target="_blank" rel="noopener sponsored" class="btn-accent text-white text-[13px] font-medium px-4 py-2 rounded-full inline-block">Prova ora</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderBlog(){
+  const grid = document.getElementById('blogGrid');
+  grid.innerHTML = '';
+  siteData.articoliBlog.forEach(a => {
+    const card = document.createElement('a');
+    card.href = 'articolo.html?id=' + encodeURIComponent(a.id);
+    card.className = 'card-hover block bg-white rounded-[24px] p-6 border';
+    card.style.borderColor = 'var(--border)';
+    card.innerHTML = `
+      <p class="text-[12px] font-semibold mb-3" style="color:var(--accent)">${a.categoria}</p>
+      <h4 class="text-[17px] font-semibold leading-snug mb-2" style="color:var(--text)">${a.titolo}</h4>
+      <p class="text-[14px] mb-4" style="color:var(--text-secondary)">${a.estratto}</p>
+      <p class="text-[13px]" style="color:var(--text-secondary)">${formatData(a.data)}</p>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderPage(){
+  document.getElementById('navLogo').textContent = siteData.sito.nome;
+  document.getElementById('heroPayoff').textContent = siteData.sito.payoff;
+  document.getElementById('footerText').textContent = `© 2026 ${siteData.sito.nome}. Tutti i diritti riservati.`;
+  const emailEl = document.getElementById('footerEmail');
+  emailEl.textContent = siteData.sito.contatti.email;
+  emailEl.href = 'mailto:' + siteData.sito.contatti.email;
+
+  renderHardware();
+  renderSoftware();
+  renderBlog();
+}
+
+fetch('site-data.json')
+  .then(r => {
+    if(!r.ok) throw new Error('File site-data.json non trovato');
+    return r.json();
+  })
+  .then(json => { siteData = json; renderPage(); })
+  .catch(err => {
+    console.error(err);
+    document.getElementById('heroPayoff').textContent = 'Errore nel caricamento dei contenuti';
+  });
+</script>
+</body>
+</html>

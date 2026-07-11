@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articolo — Nexus Privacy</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --bg:#F5F5F7;
+    --surface:#FFFFFF;
+    --text:#1D1D1F;
+    --text-secondary:#6E6E73;
+    --accent:#0071E3;
+    --accent-hover:#0077ED;
+    --border:#D2D2D7;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .prose-article p{
+    font-size:1.25rem;
+    line-height:1.75;
+    color:var(--text);
+    margin-bottom:1.5rem;
+    letter-spacing:-0.01em;
+  }
+  .prose-article h2{
+    font-size:1.75rem;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    margin-top:2.5rem;
+    margin-bottom:1rem;
+  }
+  .nav-blur{
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    background-color:rgba(245,245,247,0.8);
+  }
+  .btn-accent{
+    background:var(--accent);
+    transition:background-color .2s ease;
+  }
+  .btn-accent:hover{background:var(--accent-hover);}
+  .card-hover{transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;}
+  .card-hover:hover{transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.08);}
+  .fade-in{animation:fadeIn .6s ease both;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b" style="border-color:var(--border)">
+  <div class="max-w-6xl mx-auto px-6 h-12 flex items-center justify-between">
+    <a href="#" id="navLogo" class="text-[15px] font-semibold tracking-tight" style="color:var(--text)">Nexus Privacy</a>
+    <div class="hidden md:flex items-center gap-8 text-[13px]" style="color:var(--text-secondary)">
+      <a href="#" class="hover:text-black transition-colors">Hardware</a>
+      <a href="#" class="hover:text-black transition-colors">Software</a>
+      <a href="#" class="hover:text-black transition-colors">Blog</a>
+      <a href="#" class="hover:text-black transition-colors">Chi siamo</a>
+    </div>
+    <a href="#" class="text-[13px] font-medium" style="color:var(--accent)">Contatti →</a>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="pt-40 pb-16 px-6">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+    <p id="articleCategory" class="text-[15px] font-semibold mb-4" style="color:var(--accent)"></p>
+    <h1 id="articleTitle" class="text-[40px] md:text-[56px] font-semibold leading-[1.05] tracking-tight mb-6"></h1>
+    <p id="articleMeta" class="text-[15px]" style="color:var(--text-secondary)"></p>
+  </div>
+</header>
+
+<!-- HERO IMAGE -->
+<div class="max-w-5xl mx-auto px-6 mb-16 fade-in">
+  <div id="articleHero" class="w-full aspect-[16/7] rounded-[28px] bg-cover bg-center" style="background-color:#E8E8ED;"></div>
+</div>
+
+<!-- ARTICLE BODY -->
+<main class="max-w-3xl mx-auto px-6 pb-24">
+  <div id="articleExcerpt" class="text-[22px] font-medium mb-10" style="color:var(--text)"></div>
+  <div id="articleContent" class="prose-article"></div>
+
+  <!-- SHARE / BACK -->
+  <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border)">
+    <a href="index.html#blog" class="text-[15px] font-medium flex items-center gap-1" style="color:var(--accent)">
+      ← Torna al blog
+    </a>
+    <div class="flex gap-3">
+      <span class="text-[13px]" style="color:var(--text-secondary)">Condividi:</span>
+      <a href="#" class="text-[13px] font-medium" style="color:var(--accent)">X</a>
+      <a href="#" class="text-[13px] font-medium" style="color:var(--accent)">LinkedIn</a>
+    </div>
+  </div>
+</main>
+
+<!-- ALTRI ARTICOLI -->
+<section class="max-w-6xl mx-auto px-6 pb-28">
+  <h3 class="text-[13px] font-semibold uppercase tracking-wide mb-6" style="color:var(--text-secondary)">Continua a leggere</h3>
+  <div id="relatedArticles" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t py-10 px-6" style="border-color:var(--border)">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-[13px]" style="color:var(--text-secondary)">
+    <p id="footerText"></p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-black transition-colors">Privacy</a>
+      <a href="#" class="hover:text-black transition-colors">Termini</a>
+      <a href="#" id="footerEmail" class="hover:text-black transition-colors"></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+let siteData = null;
+
+function formatData(iso){
+  const d = new Date(iso);
+  return d.toLocaleDateString('it-IT', { day:'numeric', month:'long', year:'numeric' });
+}
+
+function renderArticle(articleId){
+  const art = siteData.articoliBlog.find(a => a.id === articleId) || siteData.articoliBlog[0];
+
+  document.title = art.titolo + " — " + siteData.sito.nome;
+  document.getElementById('navLogo').textContent = siteData.sito.nome;
+  document.getElementById('articleCategory').textContent = art.categoria;
+  document.getElementById('articleTitle').textContent = art.titolo;
+  document.getElementById('articleMeta').textContent = formatData(art.data) + " · Lettura ~4 min";
+  document.getElementById('articleExcerpt').textContent = art.estratto;
+  document.getElementById('articleContent').innerHTML = art.contenutoHTML;
+
+  const heroText = encodeURIComponent(art.titolo.slice(0, 28));
+  document.getElementById('articleHero').style.backgroundImage =
+    `url('https://placehold.co/1200x525/E8E8ED/1D1D1F?text=${heroText}')`;
+
+  document.getElementById('footerText').textContent =
+    `© 2026 ${siteData.sito.nome}. Tutti i diritti riservati.`;
+  const emailEl = document.getElementById('footerEmail');
+  emailEl.textContent = siteData.sito.contatti.email;
+  emailEl.href = 'mailto:' + siteData.sito.contatti.email;
+
+  const related = siteData.articoliBlog.filter(a => a.id !== art.id).slice(0, 3);
+  const relatedContainer = document.getElementById('relatedArticles');
+  relatedContainer.innerHTML = '';
+  related.forEach(r => {
+    const card = document.createElement('a');
+    card.href = 'articolo.html?id=' + encodeURIComponent(r.id);
+    card.className = 'card-hover block rounded-[20px] p-6 bg-white border';
+    card.style.borderColor = 'var(--border)';
+    card.innerHTML = `
+      <p class="text-[12px] font-semibold mb-2" style="color:var(--accent)">${r.categoria}</p>
+      <h4 class="text-[17px] font-semibold leading-snug mb-2" style="color:var(--text)">${r.titolo}</h4>
+      <p class="text-[13px]" style="color:var(--text-secondary)">${formatData(r.data)}</p>
+    `;
+    relatedContainer.appendChild(card);
+  });
+}
+
+function getArticleIdFromUrl(){
+  const params = new URLSearchParams(window.location.search);
+  return params.get('id');
+}
+
+fetch('site-data.json')
+  .then(r => {
+    if(!r.ok) throw new Error('File site-data.json non trovato');
+    return r.json();
+  })
+  .then(json => {
+    siteData = json;
+    const requestedId = getArticleIdFromUrl();
+    const fallbackId = siteData.articoliBlog[0] ? siteData.articoliBlog[0].id : null;
+    renderArticle(requestedId || fallbackId);
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById('articleTitle').textContent = 'Errore nel caricamento dell\'articolo';
+  });
+</script>
+</body>
+</html>
