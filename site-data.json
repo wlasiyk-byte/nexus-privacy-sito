@@ -2,52 +2,145 @@
   "sito": {
     "nome": "Nexus Privacy",
     "payoff": "Hardware sicuro. Software intelligente. Zero compromessi sui tuoi dati.",
+    "descrizioneSeo": "Guide e recensioni indipendenti su smart home privacy-first e strumenti AI/B2B per aziende che vogliono automatizzare senza esporre i propri dati.",
     "contatti": {
-      "email": "redazione@nexusprivacy.io"
-    }
+      "email": "redazione@nexusprivacy.io",
+      "twitter": "@nexusprivacy",
+      "linkedin": "linkedin.com/company/nexusprivacy"
+    },
+    "logoTesto": "Nexus Privacy"
   },
   "prodottiFisici": [
     {
       "id": "hw-001",
       "titolo": "Firewalla Gold SE",
-      "descrizioneBreve": "Router-firewall dedicato con VPN integrata, ad-blocking a livello di rete e monitoraggio del traffico in tempo reale.",
+      "descrizioneBreve": "Router-firewall dedicato con VPN integrata, ad-blocking a livello di rete e monitoraggio del traffico in tempo reale senza inviare dati al cloud del produttore.",
       "voto": 4.8,
       "prezzoStimato": "489€",
       "linkAffiliato": "https://esempio-affiliato.com/firewalla-gold-se",
-      "immaginePlaceholder": "https://placehold.co/600x600/E8E8ED/1D1D1F?text=Firewalla"
+      "immaginePlaceholder": "https://placehold.co/600x600/F5F5F7/1D1D1F?text=Firewalla+Gold+SE"
     },
     {
-      "id": "hw-ump1a",
-      "titolo": "Gold",
-      "descrizioneBreve": "dasdd",
-      "voto": 5,
-      "prezzoStimato": "999",
-      "linkAffiliato": "",
-      "immaginePlaceholder": ""
+      "id": "hw-002",
+      "titolo": "Reolink Argus 4 Pro (Local Storage)",
+      "descrizioneBreve": "Telecamera smart con AI on-device per il rilevamento persone/veicoli, registrazione solo su microSD locale e nessun account cloud obbligatorio.",
+      "voto": 4.6,
+      "prezzoStimato": "159€",
+      "linkAffiliato": "https://esempio-affiliato.com/reolink-argus-4-pro",
+      "immaginePlaceholder": "https://placehold.co/600x600/F5F5F7/1D1D1F?text=Reolink+Argus+4"
+    },
+    {
+      "id": "hw-003",
+      "titolo": "Nitrokey 3 Pro",
+      "descrizioneBreve": "Chiave di sicurezza hardware open source per autenticazione a due fattori, crittografia email e gestione password senza dipendere da provider terzi.",
+      "voto": 4.7,
+      "prezzoStimato": "69€",
+      "linkAffiliato": "https://esempio-affiliato.com/nitrokey-3-pro",
+      "immaginePlaceholder": "https://placehold.co/600x600/F5F5F7/1D1D1F?text=Nitrokey+3+Pro"
+    },
+    {
+      "id": "hw-004",
+      "titolo": "Synology DS224+ (NAS privato)",
+      "descrizioneBreve": "Storage domestico per backup automatici, videosorveglianza locale e sync file privato: l'alternativa concreta a Google Drive e Dropbox.",
+      "voto": 4.5,
+      "prezzoStimato": "299€",
+      "linkAffiliato": "https://esempio-affiliato.com/synology-ds224plus",
+      "immaginePlaceholder": "https://placehold.co/600x600/F5F5F7/1D1D1F?text=Synology+DS224%2B"
     }
   ],
   "softwareAI": [
     {
       "id": "sw-001",
-      "titolo": "Frigate NVR",
+      "titolo": "Frigate NVR (AI locale)",
       "tipoCommissione": "Una tantum 25%",
-      "descrizioneBreve": "Sistema di videosorveglianza open source con AI eseguita in locale.",
+      "descrizioneBreve": "Sistema di videosorveglianza open source con rilevamento oggetti tramite AI eseguita interamente in locale, zero invii a server esterni.",
       "caratteristicheChiave": [
         "Riconoscimento oggetti on-device",
-        "Integrazione Home Assistant"
+        "Integrazione Home Assistant nativa",
+        "Nessun abbonamento cloud richiesto",
+        "Supporto multi-telecamera illimitato"
       ],
       "linkAffiliato": "https://esempio-affiliato.com/frigate-nvr",
-      "immaginePlaceholder": "https://placehold.co/600x400/E8E8ED/1D1D1F?text=Frigate"
+      "immaginePlaceholder": "https://placehold.co/600x400/F5F5F7/1D1D1F?text=Frigate+NVR"
+    },
+    {
+      "id": "sw-002",
+      "titolo": "n8n Cloud (Automazione B2B)",
+      "tipoCommissione": "Ricorrente 20%",
+      "descrizioneBreve": "Piattaforma di automazione workflow low-code pensata per team tecnici: collega CRM, email e AI senza scrivere infrastruttura da zero.",
+      "caratteristicheChiave": [
+        "Oltre 400 integrazioni native",
+        "Nodi AI per GPT e modelli custom",
+        "Self-hosting disponibile per compliance",
+        "Audit log per ambienti enterprise"
+      ],
+      "linkAffiliato": "https://esempio-affiliato.com/n8n-cloud",
+      "immaginePlaceholder": "https://placehold.co/600x400/F5F5F7/1D1D1F?text=n8n+Automation"
+    },
+    {
+      "id": "sw-003",
+      "titolo": "Vanta (Compliance Automation)",
+      "tipoCommissione": "Ricorrente 15%",
+      "descrizioneBreve": "Automatizza la raccolta di evidenze per certificazioni SOC 2, ISO 27001 e GDPR, riducendo drasticamente il tempo speso in audit manuali.",
+      "caratteristicheChiave": [
+        "Monitoraggio continuo dei controlli",
+        "Integrazione con AWS, GCP, Azure",
+        "Dashboard pronta per gli auditor",
+        "Gestione fornitori terzi inclusa"
+      ],
+      "linkAffiliato": "https://esempio-affiliato.com/vanta-compliance",
+      "immaginePlaceholder": "https://placehold.co/600x400/F5F5F7/1D1D1F?text=Vanta+Compliance"
+    },
+    {
+      "id": "sw-004",
+      "titolo": "Proton Business Suite",
+      "tipoCommissione": "Ricorrente 30%",
+      "descrizioneBreve": "Suite email, calendario e cloud storage con crittografia end-to-end pensata per team che non vogliono affidare i dati aziendali a Big Tech.",
+      "caratteristicheChiave": [
+        "Crittografia end-to-end su tutti i servizi",
+        "Sede legale e server in Svizzera",
+        "Migrazione guidata da Google Workspace",
+        "Controlli admin centralizzati"
+      ],
+      "linkAffiliato": "https://esempio-affiliato.com/proton-business",
+      "immaginePlaceholder": "https://placehold.co/600x400/F5F5F7/1D1D1F?text=Proton+Business"
+    },
+    {
+      "id": "sw-d2oo4",
+      "titolo": "uraaaaa",
+      "tipoCommissione": "999",
+      "descrizioneBreve": "super ",
+      "caratteristicheChiave": [
+        "dasdasd"
+      ],
+      "linkAffiliato": "",
+      "immaginePlaceholder": ""
     }
   ],
   "articoliBlog": [
     {
       "id": "blog-001",
-      "titolo": "Router VPN vs VPN software",
+      "titolo": "Router VPN vs VPN software: quale protegge davvero la tua rete domestica",
       "data": "2026-06-02",
       "categoria": "Smart Home",
-      "estratto": "Confrontiamo la protezione a livello di rete con quella a livello di dispositivo.",
-      "contenutoHTML": "<p>Testo dell'articolo...</p>"
+      "estratto": "Confrontiamo la protezione a livello di rete con quella a livello di dispositivo per capire quando conviene investire in un router dedicato.",
+      "contenutoHTML": "<p>Quando si parla di privacy in casa, la prima domanda è dove far vivere la protezione: sul singolo dispositivo o sull'intera rete.</p><p>In questo articolo analizziamo pro e contro di entrambi gli approcci, con casi d'uso concreti per famiglie e piccoli uffici.</p>"
+    },
+    {
+      "id": "blog-002",
+      "titolo": "Automazione B2B senza cedere dati: la checklist prima di scegliere un tool AI",
+      "data": "2026-05-18",
+      "categoria": "Software B2B",
+      "estratto": "Cinque domande da porsi prima di integrare un nuovo strumento di automazione basato su AI nei processi aziendali.",
+      "contenutoHTML": "<p>Molti tool di automazione promettono efficienza ma nascondono clausole poco chiare sul trattamento dei dati.</p><p>Ecco la checklist che usiamo in redazione per valutare ogni nuovo strumento prima di consigliarlo.</p>"
+    },
+    {
+      "id": "blog-003",
+      "titolo": "Videosorveglianza locale: come funziona il rilevamento AI senza cloud",
+      "data": "2026-04-30",
+      "categoria": "Smart Home",
+      "estratto": "Guida pratica ai sistemi NVR open source che eseguono il riconoscimento oggetti direttamente sul tuo hardware.",
+      "contenutoHTML": "<p>Il rilevamento di persone e veicoli non richiede più necessariamente un abbonamento cloud.</p><p>Vediamo come impostare un sistema di videosorveglianza completamente locale in meno di un'ora.</p>"
     }
   ]
 }
