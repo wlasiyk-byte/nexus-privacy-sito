@@ -46,6 +46,15 @@
       "prezzoStimato": "299€",
       "linkAffiliato": "https://esempio-affiliato.com/synology-ds224plus",
       "immaginePlaceholder": "https://placehold.co/600x600/F5F5F7/1D1D1F?text=Synology+DS224%2B"
+    },
+    {
+      "id": "hw-m63bj",
+      "titolo": "Ciapa",
+      "descrizioneBreve": "dasdadasd",
+      "voto": 1,
+      "prezzoStimato": "1000",
+      "linkAffiliato": "",
+      "immaginePlaceholder": ""
     }
   ],
   "softwareAI": [
