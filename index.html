@@ -184,17 +184,15 @@ function renderHardware(){
   grid.innerHTML = '';
   siteData.prodottiFisici.forEach(p => {
     const card = document.createElement('div');
-    card.className = 'carousel-card card-hover bg-white rounded-[24px] p-7 flex flex-col gap-4 border w-[340px] sm:w-[400px]';
+    card.className = 'carousel-card card-hover bg-white rounded-[24px] p-6 flex flex-col gap-4 border w-[82%] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]';
     card.style.borderColor = 'var(--border)';
     card.innerHTML = `
-      <div class="flex gap-5 items-start">
-        <img src="${p.immaginePlaceholder}" alt="${p.titolo}" class="w-20 h-20 rounded-[16px] object-cover flex-shrink-0">
-        <div class="min-w-0">
-          <h3 class="text-[18px] font-semibold mb-1 tracking-tight leading-snug" style="color:var(--text)">${p.titolo}</h3>
-          <div class="text-[13px]">${starRow(p.voto)} <span style="color:var(--text-secondary)">(${p.voto})</span></div>
-        </div>
+      <img src="${p.immaginePlaceholder}" alt="${p.titolo}" class="w-full h-36 rounded-[14px] object-cover">
+      <div>
+        <h3 class="text-[16px] font-semibold mb-1 tracking-tight leading-snug" style="color:var(--text)">${p.titolo}</h3>
+        <div class="text-[12px]">${starRow(p.voto)} <span style="color:var(--text-secondary)">(${p.voto})</span></div>
       </div>
-      <p class="text-[14px]" style="color:var(--text-secondary)">${p.descrizioneBreve}</p>
+      <p class="text-[13px] leading-snug" style="color:var(--text-secondary)">${p.descrizioneBreve}</p>
       <div class="flex items-center justify-between mt-auto pt-2">
         <span class="text-[15px] font-semibold" style="color:var(--text)">${p.prezzoStimato}</span>
         <a href="${p.linkAffiliato}" target="_blank" rel="noopener sponsored" class="btn-accent text-white text-[13px] font-medium px-4 py-2 rounded-full">Vedi offerta</a>
@@ -210,18 +208,18 @@ function renderSoftware(){
   grid.innerHTML = '';
   siteData.softwareAI.forEach(s => {
     const card = document.createElement('div');
-    card.className = 'carousel-card card-hover bg-[#F5F5F7] rounded-[24px] p-7 border w-[340px] sm:w-[400px] flex flex-col';
+    card.className = 'carousel-card card-hover bg-[#F5F5F7] rounded-[24px] p-6 border w-[82%] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex flex-col';
     card.style.borderColor = 'var(--border)';
     const feats = s.caratteristicheChiave.map(f => `
       <li class="flex items-start gap-2 text-[13px]" style="color:var(--text-secondary)">
         <span style="color:var(--accent)">✓</span>${f}
       </li>`).join('');
     card.innerHTML = `
-      <div class="flex items-center justify-between mb-4 gap-3">
-        <h3 class="text-[18px] font-semibold tracking-tight leading-snug" style="color:var(--text)">${s.titolo}</h3>
-        <span class="text-[11px] font-semibold px-3 py-1 rounded-full flex-shrink-0" style="background:rgba(0,113,227,0.1); color:var(--accent)">${s.tipoCommissione}</span>
+      <div class="flex items-start justify-between mb-3 gap-2">
+        <h3 class="text-[16px] font-semibold tracking-tight leading-snug" style="color:var(--text)">${s.titolo}</h3>
       </div>
-      <p class="text-[14px] mb-4" style="color:var(--text-secondary)">${s.descrizioneBreve}</p>
+      <span class="text-[11px] font-semibold px-3 py-1 rounded-full self-start mb-3 inline-block" style="background:rgba(0,113,227,0.1); color:var(--accent)">${s.tipoCommissione}</span>
+      <p class="text-[13px] mb-4 leading-snug" style="color:var(--text-secondary)">${s.descrizioneBreve}</p>
       <ul class="space-y-2 mb-6">${feats}</ul>
       <a href="${s.linkAffiliato}" target="_blank" rel="noopener sponsored" class="btn-accent text-white text-[13px] font-medium px-4 py-2 rounded-full inline-block mt-auto self-start">Prova ora</a>
     `;
@@ -237,10 +235,7 @@ function setupCarousel(trackId, prevId, nextId){
   if(!track || !prevBtn || !nextBtn) return;
 
   function scrollAmount(){
-    const card = track.querySelector('.carousel-card');
-    const cardWidth = card ? card.getBoundingClientRect().width : 340;
-    const gap = 24;
-    return (cardWidth + gap) * 2; // scorre di 2 card per click
+    return track.clientWidth * 0.92; // scorre di circa una "schermata" di card visibili
   }
 
   function updateArrows(){
